@@ -1,24 +1,24 @@
-# termux-setup-tools 
+# termux-setup-tools
 
-A simple Termux setup tool to install, upgrade, and remove development tools easily using one command. 
+A simple Termux setup tool to install, upgrade, and remove development tools easily using one command.
 
-## Features 
+## Features
 
 - Update & upgrade Termux packages
 - Install basic coding tools
 - Install extra programming languages
 - Install additional utilities
 - Remove installed tools easily
-- Clean and simple CLI interface 
+- Clean and simple CLI interface
 
-## Requirements 
+## Requirements
 
 - Termux (official version)
-- Internet connection 
+- Internet connection
 
-## Installation 
+## Installation
 
-Make sure you are inside the Termux home directory. Do not run this tool from `/sdcard`. 
+Make sure you are inside the Termux home directory. Do not run this tool from `/sdcard`.
 
 ```bash
 pkg install git -y
@@ -26,9 +26,10 @@ git clone https://github.com/xyozzcyber-bit/termux-setup-tools.git
 cd termux-setup-tools
 chmod +x installation.bash uninstall.bash bin/termux-setup
 bash installation.bash
-
-# check version
-termux-setup -v
+```
+## Verify installation:
+```bash
+termux-setup --help
 ```
 ## Usage
 ```bash
@@ -45,30 +46,20 @@ termux-setup remove etc
 ## Uninstall
 ```bash
 chmod +x uninstall.bash
-bash uninstall.bash
+./uninstall.bash
 ```
-## Notes 
+## Notes
 
-Always run this tool from Termux home directory 
+Always run this tool from Termux home directory
 
-Do not use sudo 
+Do not use sudo
 
 Some packages may fail depending on device support
 
 
-License 
+License
 
 Open-source project. Free to use and modify.
-chmod +x installation.bash uninstall.bash bin/termux-setup
-bash installation.bash 
-
-## Verify installation:
-termux-setup --help
-```
-## Usage
-```bash
-termux-setup --help
-termux-setup --version
 termux-setup install upgrade
 termux-setup install coding1
 termux-setup install coding2
