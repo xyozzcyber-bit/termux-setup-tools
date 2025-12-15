@@ -1,43 +1,65 @@
-# termux-setup
+# termux-setup-tools 
 
-Termux Setup Tool is a simple command-line utility designed to help users quickly set up a productive Termux environment. This tool provides an easy way to install, upgrade, and remove commonly used development tools and programming languages directly from one command.
+A simple Termux setup tool to install, upgrade, and remove development tools easily using one command. 
 
-## Features
+## Features 
 
-- Upgrade and update Termux packages
+- Update & upgrade Termux packages
 - Install basic coding tools
-- Install additional programming languages
-- Install extra utilities
+- Install extra programming languages
+- Install additional utilities
 - Remove installed tools easily
-- Simple and clean command-line interface
+- Clean and simple CLI interface 
 
-## Requirements
+## Requirements 
 
-- Termux (official version from F-Droid or GitHub)
-- Internet connection
-- Basic knowledge of terminal commands
+- Termux (official version)
+- Internet connection 
 
-## Installation
+## Installation 
 
-Make sure you are working inside the Termux home directory. Do not run this tool from `/sdcard` or any external storage.
-
-First, install Git if it is not already installed:
+Make sure you are inside the Termux home directory. Do not run this tool from `/sdcard`. 
 
 ```bash
 pkg install git -y
-```
-clone this repository:
+git clone https://github.com/xyozzcyber-bit/termux-setup-tools.git
+cd termux-setup-tools
+chmod +x installation.bash uninstall.bash bin/termux-setup
+./installation.bash 
+
+## Verify installation:
 ```bash
-git clone https://github.com/xyozzcyber-bit/termux-setup-.git
+termux-setup --help
 ```
-make all scripts executable:
+## Usage
 ```bash
-chmod +x installation.bash uninstall.bash bin/termux-setup-tools.git
+termux-setup --help
+termux-setup --version
+termux-setup install upgrade
+termux-setup install coding1
+termux-setup install coding2
+termux-setup install etc
+termux-setup remove coding1
+termux-setup remove coding2
+termux-setup remove etc
 ```
-run the installer:
+## Uninstall
 ```bash
-bash installation.bash
+chmod +x uninstall.bash
+./uninstall.bash
 ```
+## Notes 
+
+Always run this tool from Termux home directory 
+
+Do not use sudo 
+
+Some packages may fail depending on device support
+
+
+License 
+
+Open-source project. Free to use and modify.
 After installation, verify that the command is available:
 ```bash
 termux-setup --help
