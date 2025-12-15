@@ -25,6 +25,41 @@ pkg install git -y
 git clone https://github.com/xyozzcyber-bit/termux-setup-tools.git
 cd termux-setup-tools
 chmod +x installation.bash uninstall.bash bin/termux-setup
+bash installation.bash
+
+# check version
+termux-setup -v
+```
+## Usage
+```bash
+termux-setup --help
+termux-setup --version
+termux-setup install upgrade
+termux-setup install coding1
+termux-setup install coding2
+termux-setup install etc
+termux-setup remove coding1
+termux-setup remove coding2
+termux-setup remove etc
+```
+## Uninstall
+```bash
+chmod +x uninstall.bash
+bash uninstall.bash
+```
+## Notes 
+
+Always run this tool from Termux home directory 
+
+Do not use sudo 
+
+Some packages may fail depending on device support
+
+
+License 
+
+Open-source project. Free to use and modify.
+chmod +x installation.bash uninstall.bash bin/termux-setup
 bash installation.bash 
 
 ## Verify installation:
