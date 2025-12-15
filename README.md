@@ -28,11 +28,11 @@ pkg install git -y
 ```
 clone this repository:
 ```bash
-git clone https://github.com/xyozzcyber-bit/termux-setup.git
+git clone https://github.com/xyozzcyber-bit/termux-setup-.git
 ```
 make all scripts executable:
 ```bash
-chmod +x installation.bash uninstall.bash bin/termux-setup
+chmod +x installation.bash uninstall.bash bin/termux-setup-tools.git
 ```
 run the installer:
 ```bash
