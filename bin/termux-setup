@@ -1,0 +1,93 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+VERSION="1.0.0"
+
+show_help() {
+    echo "Termux Setup Tool"
+    echo ""
+    echo "Usage:"
+    echo "  termux-setup [OPTION]"
+    echo ""
+    echo "Options:"
+    echo "  -h, --help                     Show this help"
+    echo "  -v, --version                  Show version"
+    echo ""
+    echo "Install options:"
+    echo "  install upgrade                Update & upgrade system"
+    echo "  install coding1                Install basic coding tools"
+    echo "  install coding2                Install extra programming languages"
+    echo "  install etc                    Install extra utilities"
+    echo ""
+    echo "Remove options:"
+    echo "  remove coding1                 Remove basic coding tools"
+    echo "  remove coding2                 Remove extra programming languages"
+    echo "  remove etc                     Remove extra utilities"
+}
+
+case "$1" in
+    -h|--help|"")
+        show_help
+        ;;
+
+    -v|--version)
+        echo "Termux Setup v$VERSION"
+        ;;
+
+    install)
+        case "$2" in
+            upgrade)
+                echo "Updating and upgrading system..."
+                pkg update -y && pkg upgrade -y
+                ;;
+
+            coding1)
+                echo "Installing basic coding tools..."
+                pkg install -y python nodejs clang lua
+                ;;
+
+            coding2)
+                echo "Installing extra programming languages..."
+                pkg install -y openjdk golang gcc rust php ruby perl swift
+                ;;
+
+            etc)
+                echo "Installing extra utilities..."
+                pkg install -y neovim htop wget curl git
+                ;;
+
+            *)
+                echo "Invalid install option"
+                echo "Type: termux-setup --help"
+                ;;
+        esac
+        ;;
+
+    remove)
+        case "$2" in
+            coding1)
+                echo "Removing basic coding tools..."
+                pkg uninstall -y python nodejs clang lua
+                ;;
+
+            coding2)
+                echo "Removing extra programming languages..."
+                pkg uninstall -y openjdk golang gcc rust php ruby perl swift
+                ;;
+
+            etc)
+                echo "Removing extra utilities..."
+                pkg uninstall -y neovim htop wget curl git
+                ;;
+
+            *)
+                echo "Invalid remove option"
+                echo "Type: termux-setup --help"
+                ;;
+        esac
+        ;;
+
+    *)
+        echo "Unknown command"
+        echo "Type: termux-setup --help"
+        ;;
+esac
